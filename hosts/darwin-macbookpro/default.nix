@@ -37,10 +37,6 @@ inputs.nix-darwin.lib.darwinSystem rec {
       };
 
       home-manager.users.${globals.user} = {
-        #extraSpecialArgs = {
-        #	inherit (specialArgs) firefox-addons;
-        #	};
-        # extraSpecialArgs = specialArgs;
         imports = [
           inputs.nix-index-database.homeModules.nix-index
           inputs.nixvim.homeModules.nixvim
