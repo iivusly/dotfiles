@@ -101,6 +101,7 @@
           packages = with pkgs; [
             git
             sops
+            nix-output-monitor
           ];
           shellHook = '''';
         };
