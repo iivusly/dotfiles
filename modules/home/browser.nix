@@ -5,7 +5,7 @@
   ...
 }:
 {
-  home-manager.users.${config.user}.programs.firefox = {
+programs.firefox = {
     enable = true;
     package = if pkgs.stdenv.isDarwin then pkgs.firefox-bin else pkgs.firefox-wayland;
     nativeMessagingHosts = with pkgs; [ ff2mpv-rust ];

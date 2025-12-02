@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
 {
-  home-manager.users.${config.user} = {
     programs.browserpass.enable = true;
-    home.packages = with pkgs; [ pkgs.unstable.qtpass ];
+    home.packages = [ pkgs.unstable.qtpass ];
     programs.password-store = {
       enable = true;
       package = pkgs.pass.withExtensions (exts: [
@@ -14,5 +13,4 @@
         PASSWORD_STORE_DIR = "/Users/${config.user}/.password-store";
       }; # TODO: update path for unix
     };
-  };
 }

@@ -2,7 +2,6 @@
 
 { config, pkgs, ... }:
 {
-  home-manager.users.${config.user} = {
     home.packages = with pkgs; [ fd ];
     programs.nixvim = {
       enable = true;
@@ -174,5 +173,4 @@
         };
       };
     };
-  };
 }
