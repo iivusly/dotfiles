@@ -6,6 +6,7 @@ inputs.nixpkgs.lib.nixosSystem rec {
     inherit outputs;
   };
   modules = [
+    inputs.sops-nix.nixosModules.sops
     inputs.arion.nixosModules.arion
     inputs.disko.nixosModules.disko
     ./hardware-configuration.nix
