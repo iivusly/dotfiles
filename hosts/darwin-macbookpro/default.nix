@@ -9,7 +9,7 @@ inputs.nix-darwin.lib.darwinSystem rec {
   specialArgs = {
     util = (import ../../util);
     firefox-addons = inputs.firefox-addons.packages.${system};
-    inherit outputs inputs;
+    inherit outputs inputs globals;
   };
   modules = [
     globals
@@ -23,12 +23,31 @@ inputs.nix-darwin.lib.darwinSystem rec {
         inputs.rust-overlay.overlays.default
       ];
 
-      home-manager.users.${globals.user}.imports = [
-        inputs.nix-index-database.homeModules.nix-index
-        inputs.nixvim.homeModules.nixvim
-        inputs.stylix.homeModules.stylix
-        ../../modules/home
-      ];
+      home-manager = {
+        extraSpecialArgs = specialArgs;
+        sharedModules = [
+          {
+            nixpkgs.overlays = [
+              outputs.overlays.unstable-packages
+              inputs.rust-overlay.overlays.default
+            ];
+            nixpkgs.config.allowUnfree = true;
+          }
+        ];
+      };
+
+      home-manager.users.${globals.user} = {
+        #extraSpecialArgs = {
+        #	inherit (specialArgs) firefox-addons;
+        #	};
+        # extraSpecialArgs = specialArgs;
+        imports = [
+          inputs.nix-index-database.homeModules.nix-index
+          inputs.nixvim.homeModules.nixvim
+          inputs.stylix.homeModules.stylix
+          ../../modules/home
+        ];
+      };
     }
     ../../modules/darwin
   ];

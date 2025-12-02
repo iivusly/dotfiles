@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-    programs.halloy = {
-      enable = true;
-    };
+  programs.halloy = {
+    enable = true;
+  };
 }

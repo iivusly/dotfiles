@@ -1,8 +1,7 @@
+{ lib, firefox-addons, ... }:
 let
-  utils = import ../../util;
-in 
+  util = import ../../util { inherit lib; };
+in
 {
-  imports = [
-    ./vesktop.nix
-  ];
+  imports = (util.importFiles ./.);
 }
