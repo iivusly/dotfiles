@@ -1,8 +1,9 @@
-{ inputs, globals, ... }:
+{ inputs, globals, outputs, ... }:
 inputs.nixpkgs.lib.nixosSystem rec {
   system = "x86_64-linux";
   specialArgs = {
     util = (import ../../util);
+    inherit outputs;
   };
   modules = [
     inputs.arion.nixosModules.arion
