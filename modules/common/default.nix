@@ -15,22 +15,9 @@ let
 in
 {
   imports = imports ++ [
-    ../../config/wallpaper.nix
     { _module.args.inputs = inputs; }
   ];
 
-  config.home-manager = {
-    # useGlobalPkgs = true;
-    useUserPackages = true;
-    backupFileExtension = "backup";
-
-    users.${config.user}.home.stateVersion = "25.11";
-
-  };
-  config.services.wallpaper = {
-    enable = true;
-    imagePath = ../../files/wallpapers/gruvbox_grid.png;
-  };
   options = {
     github-email = lib.mkOption {
       type = lib.types.str;

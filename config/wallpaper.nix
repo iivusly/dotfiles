@@ -20,7 +20,7 @@ in
   config = lib.mkIf cfg.enable (
     lib.mkMerge [
       (lib.mkIf pkgs.stdenv.isDarwin {
-        home-manager.users.${config.user}.home.activation.set-wallpaper =
+        home.activation.set-wallpaper =
           inputs.home-manager.lib.hm.dag.entryAfter [ "writeBoundary" ]
             ''
               /usr/bin/osascript -e '
