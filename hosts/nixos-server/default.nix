@@ -10,6 +10,7 @@ inputs.nixpkgs.lib.nixosSystem rec {
     ./hardware-configuration.nix
     # ./disko-config.nix
     ./server
+    ../../modules/common
     {
       time.timeZone = "America/Vancouver";
 
