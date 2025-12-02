@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib }:
 {
   systemdService =
     {
@@ -21,13 +21,15 @@
       Install.WantedBy = [ "graphical-session.target" ];
     };
   GatherModules = Directory: {
-
   };
-
-  importDirs = base: let 
-    contents = builtins.readDir base;
-    dirs = builtins.filter (
-      name: contents.${name} == "directory" && builtins.pathExists (base + "/${name}/default.nix")
-    ) (builtins.attrNames contents);
-  in map (name: base + "/${name}") dirs;
+  importFiles =
+    dir:
+    let
+      entries = builtins.readDir dir;
+      isFile = name: type: type == "regular" && name != "default.nix";
+      files = lib.attrNames (lib.filterAttrs isFile entries);
+      modulePaths = (map (name: dir + "/${name}") files);
+      existingModules = lib.filter (path: builtins.pathExists path) modulePaths;
+    in
+    existingModules;
 }
