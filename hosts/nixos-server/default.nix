@@ -9,8 +9,7 @@ inputs.nixpkgs.lib.nixosSystem rec {
     inputs.disko.nixosModules.disko
     ./hardware-configuration.nix
     # ./disko-config.nix
-    ../../modules/server/containers.nix
-    ../../modules/server/kodi.nix # TODO: move these imports into their own files
+    ./server
     {
       time.timeZone = "America/Vancouver";
 
