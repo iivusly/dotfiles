@@ -1,0 +1,14 @@
+keys:
+  # user
+  - &iivusly '63D9C29CB7C1026401784A763BF2BE13BFC9B4EB!'
+  # system
+  - &nixos-server 'age1m3d9syff5z34uz3dq6zxdq0aeamvzrx05zf0hqq8yf9etx4llerqzaqdkq'
+  - &macbookpro   'age1rj8zgx8zzdjqkv08z9zarqhv3gre7juqvyjkjyak37t22w6eppvql9jvt9'
+creation_rules:
+  - path_regex: 'secrets/[^/]+\.yaml$'
+    key_groups:
+    - pgp:
+      - *iivusly
+      age:
+      - *nixos-server
+      - *macbookpro
