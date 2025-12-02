@@ -24,7 +24,7 @@ in
     useUserPackages = true;
     backupFileExtension = "backup";
 
-    users.${config.user}.home.stateVersion = "25.05";
+    users.${config.user}.home.stateVersion = "25.11";
 
   };
   config.services.wallpaper = {

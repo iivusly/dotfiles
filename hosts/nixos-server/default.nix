@@ -36,7 +36,7 @@ inputs.nixpkgs.lib.nixosSystem rec {
         '';
       };
 
-      system.stateVersion = "25.05";
+      system.stateVersion = "25.11";
     }
   ];
 }

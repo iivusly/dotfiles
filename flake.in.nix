@@ -4,7 +4,7 @@
 
   inputs =
     let
-      nixpkgsVersion = "25.05";
+      nixpkgsVersion = "25.11";
 
       isDarwin = true;
 

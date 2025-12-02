@@ -8,7 +8,7 @@ let
   imports = map (name: ./. + "/${name}") nixFiles;
 in
 {
-  system.stateVersion = 5;
+  system.stateVersion = 6;
 
   imports = imports ++ [ ../common ];
 

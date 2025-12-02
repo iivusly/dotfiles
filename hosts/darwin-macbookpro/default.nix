@@ -25,7 +25,7 @@ inputs.nix-darwin.lib.darwinSystem rec {
 
       home-manager.users.${globals.user}.imports = [
         inputs.nix-index-database.homeModules.nix-index
-        inputs.nixvim.homeManagerModules.nixvim
+        inputs.nixvim.homeModules.nixvim
         inputs.stylix.homeModules.stylix
       ];
     }

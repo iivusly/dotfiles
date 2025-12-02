@@ -61,7 +61,7 @@
         neo-tree.enable = true;
         diffview = {
           enable = true;
-          hgCmd = null;
+          settings.hg_cmd = null;
         };
         web-devicons.enable = true;
         indent-blankline.enable = true;

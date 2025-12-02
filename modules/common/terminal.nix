@@ -57,8 +57,10 @@
       git = {
         enable = true;
 
-        userName = "${config.user}";
-        userEmail = "${config.github-email}";
+        settings.user = {
+          name = "${config.user}";
+          email = "${config.github-email}";
+        };
 
         ignores = [ ".DS_Store" ];
       };
