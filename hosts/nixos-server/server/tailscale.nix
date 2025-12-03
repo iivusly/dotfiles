@@ -1,6 +1,7 @@
 { config, ... }: {
+  sops.secrets."tailscale/nixos_server" = {}; # Access secret as a file
   services.tailscale = {
     enable = true;
-    authKeyFile = "/run/secrets/tailscale/nixos_server"; # TODO: bind to sops-nix
+    authKeyFile = config.sops.secrets."tailscale/nixos_server".path;
   };
 }
