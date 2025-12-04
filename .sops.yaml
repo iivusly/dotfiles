@@ -12,3 +12,9 @@ creation_rules:
       age:
       - *nixos-server
       - *macbookpro
+  - path_regex: 'hosts/nixos-server/server/containers/secrets.yaml$'
+    key_groups:
+    - pgp:
+      - *iivusly
+      age:
+      - *nixos-server

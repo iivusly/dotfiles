@@ -9,7 +9,6 @@ inputs.nixpkgs.lib.nixosSystem rec {
   modules = [
     globals
     inputs.sops-nix.nixosModules.sops
-    inputs.apple-silicon-support.nixosModules.apple-silicon-support
     inputs.home-manager.nixosModules.home-manager
     ./hardware-configuration.nix
     ../../modules/linux
