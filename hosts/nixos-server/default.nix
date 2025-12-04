@@ -33,8 +33,8 @@ inputs.nixpkgs.lib.nixosSystem rec {
         enable = true;
         createMountPoints = true;
         exports = ''
-          /export     10.0.0.0/24(rw,fsid=0,no_subtree_check,insecure,no_root_squash)
-          /export/hdd 10.0.0.0/24(rw,no_subtree_check,insecure,no_root_squash,nohide)
+          /export     100.64.0.0/10(rw,fsid=0,no_subtree_check,insecure,no_root_squash)
+          /export/hdd 100.64.0.0/10(rw,no_subtree_check,insecure,no_root_squash,nohide)
         '';
       };
 
