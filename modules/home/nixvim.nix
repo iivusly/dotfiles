@@ -84,7 +84,8 @@
         };
       };
 
-      # rustaceanvim = { enable = true; };
+      # TODO: dont depend on a plugin, use builtins
+      rustaceanvim = { enable = true; };
 
       conform-nvim = {
         enable = true;
