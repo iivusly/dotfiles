@@ -39,6 +39,8 @@
 
       arion = (dep "github:hercules-ci/arion");
       disko = (dep "github:nix-community/disko");
+
+      deploy-rs = (dep "github:serokell/deploy-rs");
     };
 
   outputs =
@@ -46,6 +48,7 @@
       self,
       nixpkgs,
       flake-utils,
+      deploy-rs,
       ...
     }@inputs:
     let
@@ -59,12 +62,15 @@
         git -C "$HOME/.dotfiles" add --intent-to-add --all
         # git -C $HOME/.dotfiles-private add --intent-to-add --automatically
       '';
+      pkgsFor = system: import nixpkgs {
+        inherit system;
+      };
     in
     {
       overlays = import ./overlays { inherit inputs; };
 
       nixosConfigurations = {
-        nixos-macbookpro = import ./hosts/nixos-macbookpro { inherit inputs outputs globals; };
+        # nixos-macbookpro = import ./hosts/nixos-macbookpro { inherit inputs outputs globals; };
         nixos-server = import ./hosts/nixos-server { inherit inputs outputs globals; };
       };
 
@@ -73,11 +79,35 @@
       };
 
       homeConfigurations = {
-        nixos-macbookpro =
-          inputs.nixosConfigurations.nixos-macbookpro.config.home-manager.users.${globals.user}.home;
+        # nixos-macbookpro = inputs.nixosConfigurations.nixos-macbookpro.config.home-manager.users.${globals.user}.home;
         MacBookPro-de-iivusly =
           inputs.darwinConfigurations.darwin-macbookpro.config.home-manager.users.${globals.user}.home;
       };
+
+      deploy = {
+        remoteBuild = true;
+        sshOpts = [ "-o" "StrictHostKeyChecking=no" "-o" "ConnectTimeout=30" ];
+        nodes = {
+        nixos-server = {
+          hostname = "nixos-server";
+          profiles.system = {
+            user = "root";
+            sshUser = "root";
+            fastConnection = false;
+            path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.nixos-server;
+          };
+        };
+        };
+      };
+
+      # checks.x86_64-linux = deploy-rs.lib.x86_64-linux.deployChecks self.deploy;
+      checks = flake-utils.lib.eachDefaultSystemPassThrough (system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+        deploy-rs-checks = deploy-rs.lib.${system}.deployChecks self.deploy;
+    in with pkgs; lib.optionalAttrs stdenv.isLinux deploy-rs-checks // {
+        # Your other usual checks can go here, e.g. deadnix, formatter, pre-commit, ...
+    });
+
     }
     // flake-utils.lib.eachDefaultSystem (
       system:
@@ -102,8 +132,12 @@
             git
             sops
             nix-output-monitor
+            deploy-rs.packages.aarch64-darwin.deploy-rs
+            openssh
           ];
-          shellHook = '''';
+          shellHook = ''
+            eval -- "$(${pkgs.starship}/bin/starship init bash --print-full-init)"
+          '';
         };
         apps = {
           git-add = createApp ''
