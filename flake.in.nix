@@ -135,9 +135,6 @@
             deploy-rs.packages.aarch64-darwin.deploy-rs
             openssh
           ];
-          shellHook = ''
-            eval -- "$(${pkgs.starship}/bin/starship init bash --print-full-init)"
-          '';
         };
         apps = {
           git-add = createApp ''
