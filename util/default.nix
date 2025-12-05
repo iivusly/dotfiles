@@ -26,7 +26,7 @@
     dir:
     let
       entries = builtins.readDir dir;
-      isFile = name: type: type == "regular" && name != "default.nix";
+      isFile = name: type: type == "regular" && name != "default.nix" && lib.hasSuffix ".nix" name;
       files = lib.attrNames (lib.filterAttrs isFile entries);
       modulePaths = (map (name: dir + "/${name}") files);
       existingModules = lib.filter (path: builtins.pathExists path) modulePaths;

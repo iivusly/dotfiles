@@ -41,6 +41,7 @@ inputs.nix-darwin.lib.darwinSystem rec {
           inputs.nix-index-database.homeModules.nix-index
           inputs.nixvim.homeModules.nixvim
           inputs.stylix.homeModules.stylix
+          inputs.sops-nix.homeManagerModules.sops
           ../../modules/home
         ];
       };

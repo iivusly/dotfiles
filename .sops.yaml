@@ -18,3 +18,9 @@ creation_rules:
       - *iivusly
       age:
       - *nixos-server
+  - path_regex: 'modules/home/secrets.yaml$'
+    key_groups:
+    - pgp:
+      - *iivusly
+      age:
+      - *macbookpro
