@@ -39,6 +39,9 @@
           shares = {
             directories = [ "/app/shares" ];
           };
+          directories = {
+            downloads = "/downloads";
+          };
         };
       };
 
