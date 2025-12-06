@@ -161,6 +161,7 @@
       };
 
       typescript-tools.enable = true;
+      typst-vim.enable = true;
       typst-preview.enable = true;
       markdown-preview.enable = true;
 
