@@ -40,6 +40,8 @@
       arion = (dep "github:hercules-ci/arion");
       disko = (dep "github:nix-community/disko");
 
+      copyparty = (dep "github:9001/copyparty");
+
       deploy-rs = (dep "github:serokell/deploy-rs");
     };
 
@@ -135,6 +137,9 @@
             deploy-rs.packages.aarch64-darwin.deploy-rs
             openssh
           ];
+          shellHook = ''
+            export EDITOR=vi
+          '';
         };
         apps = {
           git-add = createApp ''

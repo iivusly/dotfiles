@@ -33,9 +33,12 @@
 
         environmentFile = "/environment";
 
-        domain = "0.0.0.0";
+        domain = null;
 
         settings = {
+          web = {
+            port = 5030;
+          };
           shares = {
             directories = [ "/app/shares" ];
           };

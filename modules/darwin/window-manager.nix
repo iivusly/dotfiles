@@ -164,22 +164,21 @@
 
   services.jankyborders = {
     package = pkgs.unstable.jankyborders;
-    enable = true;
+    enable = false;
     active_color = "0xffebdbb2";
     inactive_color = "0xff282828";
     width = 5.0;
   };
 
-  # TODO: enable sketchybar once it is stable
-  # home-manager.users.${config.user}.programs.sketchybar = {
-  #   enable = true;
-  #   configType = "lua";
-  #   sbarLuaPackage = pkgs.unstable.sbarlua;
-  #   config = ''
-  #     local config_dir = "${../../files/sketchybar}"
-  #     package.path = config_dir .. "/?.lua;" .. config_dir .. "/?/init.lua;" .. package.path
+  home-manager.users.${config.user}.programs.sketchybar = {
+    enable = true;
+    configType = "lua";
+    sbarLuaPackage = pkgs.unstable.sbarlua;
+    config = ''
+      local config_dir = "${../../files/sketchybar}"
+      package.path = config_dir .. "/?.lua;" .. config_dir .. "/?/init.lua;" .. package.path
 
-  #     require("init")
-  #   '';
-  # };
+      require("init")
+    '';
+  };
 }

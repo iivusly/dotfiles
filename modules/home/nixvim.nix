@@ -9,6 +9,17 @@
     viAlias = true;
     vimAlias = true;
 
+    diagnostic.settings = {
+      enable = true;
+      signs.enable = true;
+      virtualText.enable = true;
+      underline.enable = true;
+      hover.enable = true;
+      float.enable = true;
+    };
+
+    
+
     opts = {
       autoread = true;
       relativenumber = true;
@@ -85,7 +96,26 @@
       };
 
       # TODO: dont depend on a plugin, use builtins
-      rustaceanvim = { enable = true; };
+      rustaceanvim = {
+        enable = false; 
+        settings = {
+          server = {
+            default_settings = {
+              rust-analyzer = {
+                check = {
+                  command = "clippy";
+                };
+                inlayHints = {
+                  lifetimeElisionHints = {
+                    enable = "always";
+                  };
+                };
+              };
+            };
+            standalone = false;
+          };
+        };
+      };
 
       conform-nvim = {
         enable = true;
@@ -140,9 +170,11 @@
           completion.keyword_length = 1;
           sources = [
             { name = "nvim_lsp"; }
+            { name = "vim_lsp"; }
             { name = "path"; }
             { name = "buffer"; }
             { name = "conventionalcommits"; }
+            { name = "clippy"; }
           ];
           mapping = {
             "<C-Space>" = "cmp.mapping.complete()";
@@ -168,6 +200,7 @@
       lsp = {
         enable = true;
 
+
         servers = {
           tinymist.enable = true;
           jsonls.enable = true;
@@ -176,6 +209,9 @@
           ts_ls.enable = true;
           ts_query_ls.enable = true;
           sourcekit.enable = true;
+          rust-analyzer = {
+            enable = true;
+          };
         };
       };
     };

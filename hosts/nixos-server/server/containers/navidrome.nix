@@ -25,6 +25,7 @@
         services.navidrome = {
           enable = true;
           settings = {
+            Prometheus.Enabled = true;
             MusicFolder = "/music";
             DataFolder = "/data";
             CacheFolder = "/cache";

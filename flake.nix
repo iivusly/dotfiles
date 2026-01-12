@@ -7,6 +7,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:hercules-ci/arion";
     };
+    copyparty = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:9001/copyparty";
+    };
     deploy-rs = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:serokell/deploy-rs";

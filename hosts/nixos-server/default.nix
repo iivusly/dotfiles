@@ -9,10 +9,13 @@ inputs.nixpkgs.lib.nixosSystem rec {
     inputs.sops-nix.nixosModules.sops
     inputs.arion.nixosModules.arion
     inputs.disko.nixosModules.disko
+    inputs.copyparty.nixosModules.default
     ./hardware-configuration.nix
-    # ./disko-config.nix
-    ./server
+    ./disko-config.nix
+    # ./server
     ../../modules/common
+    ../../modules/server/tailscale.nix
+    ../../modules/server/copyparty.nix
     {
       time.timeZone = "America/Vancouver";
 
@@ -25,17 +28,10 @@ inputs.nixpkgs.lib.nixosSystem rec {
         enable = true;
       };
 
-      networking.firewall.enable = false; # TODO: temp
-
-      programs.git.enable = true;
-
-      services.nfs.server = {
-        enable = true;
-        createMountPoints = true;
-        exports = ''
-          /export     100.64.0.0/10(rw,fsid=0,no_subtree_check,insecure,no_root_squash)
-          /export/hdd 100.64.0.0/10(rw,no_subtree_check,insecure,no_root_squash,nohide)
-        '';
+      networking = {
+        firewall = {
+          enable = false; # TODO: renable firewall
+        };
       };
 
       system.stateVersion = "25.11";
