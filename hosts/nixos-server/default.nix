@@ -14,6 +14,7 @@ inputs.nixpkgs.lib.nixosSystem rec {
     ./disko-config.nix
     # ./server
     ../../modules/common
+    ../../modules/server/users.nix
     ../../modules/server/tailscale.nix
     ../../modules/server/copyparty.nix
     {
