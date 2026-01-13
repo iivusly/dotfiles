@@ -25,4 +25,4 @@
 - https://nix-community.github.io/home-manager/options.xhtml
 - https://nix-darwin.github.io/nix-darwin/manual/index.html
 ## Credits
-- https://github.com/maximbax/dotfiles
+- https://github.com/max-baz/dotfiles
