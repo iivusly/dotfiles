@@ -2,7 +2,7 @@ keys:
   # user
   - &iivusly '63D9C29CB7C1026401784A763BF2BE13BFC9B4EB!'
   # system
-  - &nixos-server 'age193jzp6mg5v789d786vrh5hyafyq2y6zs8sts3y2s2q74mxxnpqmqvguxgd'
+  - &nixos-server 'age1h7m55qzcjsdz8gg2etn3qaeeaf2hg0evymqexqt37dnc4lf2kplqjdvdp8'
   - &macbookpro   'age1rj8zgx8zzdjqkv08z9zarqhv3gre7juqvyjkjyak37t22w6eppvql9jvt9'
 creation_rules:
   - path_regex: 'secrets/[^/]+\.yaml$'
