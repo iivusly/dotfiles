@@ -36,7 +36,7 @@
         };
       };
       external = {
-        device = "/dev/disk/by-id/usb-ST950032_5AS_WD-WX11A31Z1140-0:0";
+        device = "/dev/disk/by-id/usb-ST950032_5AS_WD-WX11A31Z1140-0";
         type = "disk";
         content = {
           type = "gpt";
@@ -47,7 +47,7 @@
                 type = "filesystem";
                 format = "ext4";
                 mountpoint = "/mnt/HDD";
-                mountOptions = [ "nofail" ];
+                mountOptions = [ "defaults" "nofail" ];
               };
             };
           };
