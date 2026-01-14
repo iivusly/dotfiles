@@ -2,7 +2,7 @@
   disko.devices = {
     disk = {
       internal = {
-        device = "/dev/mmcblk0";
+        device = "/dev/disk/by-id/mmc-DA4032_0x344bc924";
         type = "disk";
         content = {
           type = "gpt";
@@ -30,6 +30,24 @@
               content = {
                 type = "swap";
                 discardPolicy = "both";
+              };
+            };
+          };
+        };
+      };
+      external = {
+        device = "/dev/disk/by-id/usb-ST950032_5AS_WD-WX11A31Z1140-0:0";
+        type = "disk";
+        content = {
+          type = "gpt";
+          partitions = {
+            primary = {
+              size = "100%";
+              content = {
+                type = "filesystem";
+                format = "ext4";
+                mountpoint = "/mnt/HDD";
+                mountOptions = [ "nofail" ];
               };
             };
           };
