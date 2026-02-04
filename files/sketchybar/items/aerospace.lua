@@ -36,14 +36,14 @@ sbar.exec(aerospace_command .. "list-workspaces --focused --json", function(curr
               string = workspace["workspace"],
             },
           })
-  
+
           workspace_item:subscribe("aerospace_workspace_change", function(env)
             local selected = env.FOCUSED_WORKSPACE == workspace["workspace"]
             workspace_item:set({
               background = { drawing = selected }
             })
           end)
-  
+
           workspace_item:subscribe("mouse.clicked", function()
             sbar.exec(aerospace_command .. "workspace " .. workspace["workspace"])
           end)
