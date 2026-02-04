@@ -4,7 +4,16 @@ local settings = require("settings")
 local items = {}
 
 local aerospace_command = "/run/current-system/sw/bin/aerospace "
+local loaded = false
 
+while loaded do
+  sbar.exec(aerospace_command, function(result, exit_code)
+    if (exit_code == 0) then
+      loaded = true
+    end
+  end)
+  wait()
+end
 
 sbar.exec(aerospace_command .. "list-workspaces --focused --json", function(current_workspace)
   sbar.exec(aerospace_command .. "list-monitors --json", function(monitors)
