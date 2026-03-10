@@ -7,9 +7,10 @@
         content = {
           type = "gpt";
           partitions = {
-            boot = {
+            ESP = {
               type = "EF00";
               size = "512M";
+              priority = 2;
               content = {
                 type = "filesystem";
                 format = "vfat";
@@ -35,19 +36,19 @@
           };
         };
       };
-      external = {
-        device = "/dev/disk/by-id/usb-ST950032_5AS_WD-WX11A31Z1140-0:0";
+      sabrent = {
+        device = "/dev/disk/by-id/usb-SABRENT_SABRENT_DB9876543214E-0:0";
         type = "disk";
         content = {
           type = "gpt";
           partitions = {
-            primary = {
+            storage = {
               size = "100%";
               content = {
                 type = "filesystem";
                 format = "ext4";
-                mountpoint = "/mnt/HDD";
-                mountOptions = [ "defaults" "nofail" ];
+                mountpoint = "/mnt/storage";
+                mountOptions = [ "nofail" ];
               };
             };
           };

@@ -1,11 +1,12 @@
-{config, pkgs, ...}: {
+{ config, pkgs, ... }:
+{
   sops.secrets.qbittorrent_env = {
     owner = "qbittorrent";
     sopsFile = ./secrets.yaml;
   };
 
   systemd.services.qbittorrent = {
-    serviceConfig.EnvironmentFile = [ config.sops.secrets.qbittorrent_env.path];
+    serviceConfig.EnvironmentFile = [ config.sops.secrets.qbittorrent_env.path ];
 
     preStart = with pkgs; ''
       CONF_FILE="${config.services.qbittorrent.profileDir}qBittorrent/config/qBittorrent.conf"
@@ -23,6 +24,7 @@
 
   services.qbittorrent = {
     enable = true;
+    group = "storage";
     webuiPort = 1337;
     serverConfig = {
       LegalNotice.Accepted = true;

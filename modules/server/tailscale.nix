@@ -1,5 +1,7 @@
-{config, ...}: {
-  sops.secrets."tailscale/nixos_server" = {};
+{ config, ... }:
+{
+  sops.secrets."tailscale/nixos_server" = {
+  };
 
   services.tailscale = {
     enable = true;
