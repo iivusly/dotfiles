@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 {
   sops.secrets = {
-    "halloy/liberachat" = {};
-    "halloy/osu" = {};
+    "halloy/liberachat" = { };
+    "halloy/osu" = { };
   };
   programs.halloy = {
     enable = true;

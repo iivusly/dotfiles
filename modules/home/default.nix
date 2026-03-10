@@ -1,4 +1,9 @@
-{ config, lib, globals, ... }:
+{
+  config,
+  lib,
+  globals,
+  ...
+}:
 let
   util = import ../../util { inherit lib; };
 in
@@ -7,5 +12,5 @@ in
     ../../config/wallpaper.nix
   ];
 
-    home.stateVersion = "25.11";
+  home.stateVersion = "25.11";
 }
