@@ -1,4 +1,3 @@
-local colours = require("colours")
 local icons = require("icons")
 
 return {
@@ -14,11 +13,11 @@ return {
   -- Default Settings
   bar = {
     height = 22,
-    background = colours.bar.background,
+    background = _G.COLORS.BAR_COLOR,
   },
 
   default = {
-    colour = colours.white,
+    colour = _G.COLORS.TEXT_COLOR,
   },
 
 }

@@ -1,11 +1,10 @@
-local colours = require("colours")
 local settings = require("settings")
 
 local battery = sbar.add("item", "battery", {
   position = "right",
   update_freq = 180,
   background = {
-    color = colours.nord.polar_night[3],
+    color = _G.COLORS.ITEM_BG_COLOR,
     height = settings.bar.height,
   }
 })

@@ -1,11 +1,10 @@
-local colours = require("colours")
 local settings = require("settings")
 
 local date = sbar.add("item", {
   position = "right",
   update_freq = 5,
   background = {
-    color = colours.nord.polar_night[4],
+    color = _G.COLORS.ITEM_BG_COLOR,
     height = settings.bar.height,
   },
 })

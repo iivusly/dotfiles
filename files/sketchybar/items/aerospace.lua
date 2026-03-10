@@ -1,4 +1,3 @@
-local colours = require("colours")
 local settings = require("settings")
 
 local items = {}
@@ -28,7 +27,7 @@ sbar.exec(aerospace_command .. "list-workspaces --focused --json", function(curr
           local workspace_item = sbar.add("item", "space." .. workspace["workspace"], {
             position = "left",
             background = {
-              color = colours.nord.polar_night[4],
+              color = _G.COLORS.ITEM_BG_COLOR,
               drawing = current_workspace["workspace"] == workspace["workspace"],
               height = settings.bar.height
             },
