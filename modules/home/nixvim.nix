@@ -18,8 +18,6 @@
       float.enable = true;
     };
 
-    
-
     opts = {
       autoread = true;
       relativenumber = true;
@@ -97,7 +95,7 @@
 
       # TODO: dont depend on a plugin, use builtins
       rustaceanvim = {
-        enable = false; 
+        enable = false;
         settings = {
           server = {
             default_settings = {
@@ -197,9 +195,16 @@
       typst-preview.enable = true;
       markdown-preview.enable = true;
 
+      flutter-tools = {
+        enable = true;
+        settings = {
+          widget_guides.enabled = true;
+          flutter_path = "${pkgs.flutter}/bin/flutter";
+        };
+      };
+
       lsp = {
         enable = true;
-
 
         servers = {
           tinymist.enable = true;
@@ -209,7 +214,10 @@
           ts_ls.enable = true;
           ts_query_ls.enable = true;
           sourcekit.enable = true;
-          rust-analyzer = {
+          dartls.enable = true;
+          java_language_server.enable = true;
+          kotlin_language_server.enable = true;
+          rust_analyzer = {
             enable = true;
           };
         };
