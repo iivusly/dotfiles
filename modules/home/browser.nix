@@ -7,30 +7,29 @@
 {
   programs.firefox = {
     enable = true;
-    package = if pkgs.stdenv.isDarwin then pkgs.firefox-bin else pkgs.firefox-wayland;
+    package = if pkgs.stdenv.isDarwin then pkgs.firefox else pkgs.firefox-wayland;
     nativeMessagingHosts = with pkgs; [ ff2mpv-rust ];
     profiles.default = {
-      userChrome = ''
-        #sidebar-box[sidebarcommand^="containertabs"] #sidebar-header { display: none; }
-        // #TabsToolbar { visibility: collapse !important; }
-        #navigator-toolbox[fullscreenShouldAnimate] { transition: none !important; }
-      '';
+      # userChrome = ''
+      #   #sidebar-box[sidebarcommand^="containertabs"] #sidebar-header { display: none; }
+      #   // #TabsToolbar { visibility: collapse !important; }
+      #   #navigator-toolbox[fullscreenShouldAnimate] { transition: none !important; }
+      # '';
 
-      extensions.packages = with firefox-addons; [
-        clearurls
-        #ff2mpv
-        istilldontcareaboutcookies
-        sponsorblock
-        to-google-translate
-        ublock-origin
-        bitwarden
-        darkreader
-        duckduckgo-privacy-essentials
-        # simple-temporary-containers
-        # retainer
-        # container-tab-flow
-        # open-external-links-in-a-container
-      ];
+      extensions = {
+        force = true;
+        packages = with firefox-addons; [
+          browserpass
+          clearurls
+          ff2mpv
+          istilldontcareaboutcookies
+          sponsorblock
+          ublock-origin
+          darkreader
+          duckduckgo-privacy-essentials
+          tridactyl
+        ];
+      };
 
       settings = {
         "accessibility.force_disabled" = 1;
