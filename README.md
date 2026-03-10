@@ -1,6 +1,6 @@
 # My Nix Dotfiles
 ## Rules
-- Each `*.nix` file should only configure one option 
+- Each `*.nix` file should only configure one service 
 
 ## File Structure
 ```
@@ -26,3 +26,4 @@
 - https://nix-darwin.github.io/nix-darwin/manual/index.html
 ## Credits
 - https://github.com/max-baz/dotfiles
+- https://github.com/eh8/chenglab
