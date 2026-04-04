@@ -10,6 +10,7 @@
     settings = {
       i = "0.0.0.0";
       p = [ 3923 ];
+      rp-loc = "/files";
     };
     accounts = {
       admin.passwordFile = config.sops.secrets."copyparty/accounts/admin".path;

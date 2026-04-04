@@ -3,8 +3,10 @@
   imports = [
     ./ssh.nix
     ./networking.nix
+    ./nginx.nix
     ./sops.nix
     ./users.nix
+    ./slskd.nix
     ./immich.nix
     ./copyparty.nix
     ./tailscale.nix
