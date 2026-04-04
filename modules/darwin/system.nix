@@ -16,6 +16,6 @@
     { app = "/Applications/WhatsApp.app"; }
     { app = "${pkgs.thunderbird}/Applications/Thunderbird.app"; }
     { app = "${pkgs.supersonic}/Applications/Supersonic.app"; }
-    { app = "${pkgs.alacritty}/Applications/Alacritty.app"; }
+    { app = "${pkgs.kitty}/Applications/kitty.app"; }
   ];
 }
