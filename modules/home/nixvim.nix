@@ -218,6 +218,8 @@
           java_language_server.enable = true;
           kotlin_language_server.enable = true;
           rust_analyzer = {
+            installCargo = true;
+            installRustc = true;
             enable = true;
           };
         };
