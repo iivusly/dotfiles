@@ -80,7 +80,7 @@
       ];
 
       mode.main.binding = {
-        alt-enter = "exec-and-forget ${pkgs.alacritty}/bin/alacritty msg create-window || open ${pkgs.alacritty}/Applications/Alacritty.app";
+        alt-enter = "exec-and-forget ${pkgs.lib.getExe pkgs.kitty} --single-instance --directory ~";
         alt-shift-enter = "exec-and-forget open http://";
 
         # i3 wraps focus by default
