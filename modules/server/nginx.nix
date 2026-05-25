@@ -8,6 +8,9 @@
     virtualHosts = {
       "nixos-server" = {
         default = true;
+        extraConfig = ''
+          client_max_body_size 0;
+        '';
         locations = {
           "/slskd/" = {
             proxyPass = "http://127.0.0.1:${toString config.services.slskd.settings.web.port}";

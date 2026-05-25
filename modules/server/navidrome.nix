@@ -1,7 +1,6 @@
 { lib, pkgs, ... }: {
   services.navidrome = {
     enable = true;
-    package = pkgs.unstable.navidrome;
     group = "storage";
     openFirewall = true;
     settings = {

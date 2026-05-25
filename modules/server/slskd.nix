@@ -23,4 +23,6 @@
       };
     };
   };
+
+  systemd.services.slskd.serviceConfig.UMask = "0000";
 }
