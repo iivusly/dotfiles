@@ -177,10 +177,9 @@
       programs.sketchybar = {
         enable = true;
         configType = "lua";
-        sbarLuaPackage = pkgs.unstable.sbarlua;
         config = ''
-          local config_dir = "${../../files/sketchybar}"
-          package.path = config_dir .. "/?.lua;" .. config_dir .. "/?/init.lua;" .. package.path
+          local config_dir = "${../../files/sketchybar}";
+          package.path = config_dir .. "/?.lua;" .. config_dir .. "/?/init.lua;" .. package.path;
 
           _G.COLORS = {
             BAR_COLOR = "0xcc${stylix.colors.base00}",
