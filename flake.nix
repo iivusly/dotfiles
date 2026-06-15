@@ -21,7 +21,6 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     };
     flake-utils.url = "github:numtide/flake-utils";
-    flakegen.url = "github:jorsn/flakegen";
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager/release-25.11";
