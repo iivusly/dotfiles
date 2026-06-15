@@ -6,11 +6,6 @@
       unzip
       # Rust coreutils
       uutils-coreutils-noprefix
-
     ];
-
-    sessionVariables = {
-      EDITOR = "nvim";
-    };
   };
 }
