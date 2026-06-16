@@ -18,6 +18,6 @@ in
       LC_ALL = "en_CA.UTF-8";
     };
 
-    stateVersion = "25.11";
+    stateVersion = "26.05";
   };
 }

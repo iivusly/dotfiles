@@ -13,7 +13,7 @@
   systemd.services.navidrome.serviceConfig = {
     # This stops the "WASM runtime panic"
     MemoryDenyWriteExecute = lib.mkForce false;
-    
+
     # Ensure the service can see the mount point
     ReadWritePaths = [ "/mnt/storage" ];
   };

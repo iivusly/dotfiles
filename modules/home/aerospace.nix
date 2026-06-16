@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  services.aerospace = {
+  programs.aerospace = {
     enable = true;
     settings = {
       # Reference: https://github.com/i3/i3/blob/next/etc/config
@@ -80,7 +80,7 @@
       ];
 
       mode.main.binding = {
-        alt-enter = "exec-and-forget ${pkgs.lib.getExe pkgs.kitty} --single-instance --directory ~";
+        alt-enter = "exec-and-forget ${pkgs.lib.getExe config.programs.kitty.package} --single-instance --directory ~";
         alt-shift-enter = "exec-and-forget open http://";
 
         # i3 wraps focus by default

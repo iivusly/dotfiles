@@ -23,7 +23,7 @@
     flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
     };
     mac-app-util = {
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,18 +31,18 @@
     };
     nix-darwin = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:nix-darwin/nix-darwin/nix-darwin-25.11";
+      url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
     };
     nix-index-database = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:Mic92/nix-index-database";
     };
     nixlib.url = "github:nix-community/nixpkgs.lib";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.11-darwin";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-26.05-darwin";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nixvim = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:nix-community/nixvim/nixos-25.11";
+      url = "github:nix-community/nixvim/nixos-26.05";
     };
     nur = {
       inputs.nixpkgs.follows = "nixpkgs";
@@ -58,7 +58,7 @@
     };
     stylix = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:danth/stylix/release-25.11";
+      url = "github:danth/stylix/release-26.05";
     };
   };
   outputs =

@@ -1,6 +1,8 @@
-{ config, ... }: let
+{ config, ... }:
+let
   colors = config.lib.stylix.colors;
-in {
+in
+{
   programs.rmpc = {
     enable = true;
 

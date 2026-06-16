@@ -2,7 +2,7 @@ local settings = require("settings")
 
 local items = {}
 
-local aerospace_command = "/run/current-system/sw/bin/aerospace "
+local aerospace_command = _G.AEROSPACE_COMMAND .. " "
 local loaded = false
 
 while loaded do
@@ -44,7 +44,6 @@ local setup = async(function()
   local workspaces = {}
   
   for _,monitor in pairs(monitors) do
-    print(monitor["monitor-id"])
     local n_workspaces = await_exec(aerospace_command .. "list-workspaces --monitor " .. monitor["monitor-id"] .. " --json")
     for i = 1, #n_workspaces do
       table.insert(workspaces, n_workspaces[i])
