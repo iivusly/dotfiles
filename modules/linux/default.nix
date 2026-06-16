@@ -10,5 +10,5 @@ in
 {
   system.stateVersion = "26.05";
 
-  imports = imports ++ [ ../common ];
+  imports = imports ++ [ ../shared ];
 }

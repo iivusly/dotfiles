@@ -12,7 +12,7 @@
 ├── flake.nix
 ├── hosts // host configurations
 ├── modules
-│   ├── common
+│   ├── shared
 │   ├── darwin // darwin modules
 │   ├── home // home-manager modules
 │   ├── linux // linux modules

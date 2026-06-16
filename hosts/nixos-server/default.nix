@@ -16,7 +16,7 @@ inputs.nixpkgs.lib.nixosSystem {
     inputs.copyparty.nixosModules.default
     ./hardware-configuration.nix
     ./disko-config.nix
-    ../../modules/common
+    ../../modules/shared
     ../../modules/server
   ];
 }
