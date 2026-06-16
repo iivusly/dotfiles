@@ -12,5 +12,12 @@ in
     ../../config/wallpaper.nix
   ];
 
-  home.stateVersion = "25.11";
+  home = {
+    sessionVariables = {
+      LANG = "en_CA.UTF-8";
+      LC_ALL = "en_CA.UTF-8";
+    };
+
+    stateVersion = "25.11";
+  };
 }
