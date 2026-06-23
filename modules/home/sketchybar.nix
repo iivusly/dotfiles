@@ -1,6 +1,6 @@
-{ config, ... }: {
+{ config, pkgs, ... }: {
   programs.sketchybar = {
-    enable = true;
+    enable = pkgs.stdenv.hostPlatform.isDarwin;
     configType = "lua";
     config = ''
       local config_dir = "${../../files/sketchybar}";

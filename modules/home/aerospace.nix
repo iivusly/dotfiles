@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   programs.aerospace = {
-    enable = true;
+    enable = pkgs.stdenv.hostPlatform.isDarwin;
     launchd.enable = true;
     settings = {
       # Reference: https://github.com/i3/i3/blob/next/etc/config
