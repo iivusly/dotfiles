@@ -6,7 +6,7 @@ local aerospace_command = _G.AEROSPACE_COMMAND .. " "
 local loaded = false
 
 while loaded do
-  sbar.exec(aerospace_command, function(result, exit_code)
+  sbar.exec(aerospace_command .. "version", function(result, exit_code)
     if (exit_code == 0) then
       loaded = true
     end

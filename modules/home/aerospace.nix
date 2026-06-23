@@ -2,6 +2,7 @@
 {
   programs.aerospace = {
     enable = true;
+    launchd.enable = true;
     settings = {
       # Reference: https://github.com/i3/i3/blob/next/etc/config
 
@@ -152,6 +153,10 @@
         enter = "mode main";
         esc = "mode main";
       };
+
+      on-focus-changed = [
+        "exec-and-forget ${pkgs.bash}/bin/bash -c if [ \"$AEROSPACE_FOCUSED_APP_ID\" = \"com.kovidgoyal.kitty\" ]; then ${pkgs.macism}/bin/macism com.apple.keylayout.Canadian; fi"
+      ];
 
       on-window-detected = [
         {

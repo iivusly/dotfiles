@@ -41,7 +41,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-26.05-darwin";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nixvim = {
-      inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/nixvim/nixos-26.05";
     };
     nur = {
@@ -91,6 +90,7 @@
 
       nixosConfigurations = {
         # nixos-macbookpro = import ./hosts/nixos-macbookpro { inherit inputs outputs globals; };
+        nixos-msi = import ./hosts/nixos-msi { inherit inputs outputs globals; };
         nixos-server = import ./hosts/nixos-server { inherit inputs outputs globals; };
       };
 

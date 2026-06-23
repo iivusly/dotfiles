@@ -30,7 +30,7 @@ in {
             config.programs.firefox.package
           }/Applications/Firefox.app";
         }
-        { app = "/Applications/WhatsApp.app"; }
+        { app = "${pkgs.whatsapp-for-mac}/Applications/WhatsApp.app"; }
         { app = "${pkgs.thunderbird}/Applications/Thunderbird.app"; }
         { app = "${pkgs.supersonic}/Applications/Supersonic.app"; }
         { app = "${config.programs.kitty.package}/Applications/kitty.app"; }
