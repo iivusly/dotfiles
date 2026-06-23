@@ -25,6 +25,8 @@
         inputs.rust-overlay.overlays.default
       ];
 
+      user = globals.user;
+
       home-manager = {
         extraSpecialArgs = specialArgs;
         sharedModules = [
