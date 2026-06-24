@@ -111,11 +111,12 @@
       config = {
         modifier = "Mod4";
         terminal = "${pkgs.kitty}/bin/kitty";
-        keybindings =
-          let
-            modifier = config.wayland.windowManager.sway.config.modifier;
-          in
-          lib.mkOptionDefault {
+        input = {
+          "type:*" = {
+            natural_scroll = "enabled";
+          };
+        };
+        keybindings = lib.mkOptionDefault {
             "XF86AudioMute" = "exec wpctl set-mute @DEFAULT_SINK@ toggle";
             "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_SINK@ .05+";
             "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_SINK@ .05-";
