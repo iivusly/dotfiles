@@ -28,6 +28,8 @@
       user = globals.user;
       boot.loader.systemd-boot.enable = true;
 
+      networking.hostName = "nixos-msi";
+
       home-manager = {
         extraSpecialArgs = specialArgs;
         sharedModules = [

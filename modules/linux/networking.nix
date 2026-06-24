@@ -1,6 +1,5 @@
 { config, pkgs, ... }:
 {
-  networking.hostName = "nixos-macbookpro";
   # networking.networkmanager.enable = true;
   networking.wireless.iwd = {
     enable = true;
