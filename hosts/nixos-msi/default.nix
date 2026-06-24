@@ -16,7 +16,6 @@
     inputs.disko.nixosModules.disko
     ./disko-config.nix
     ./hardware-configuration.nix
-    ../../modules/shared
     ../../modules/linux
      inputs.home-manager.nixosModules.home-manager
     {
