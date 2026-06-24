@@ -4,7 +4,7 @@ keys:
   # system
   - &nixos-server 'age1gdx3xf3tpcsletrgmnm7dghyvq9v8kekreprt95fpcptzta644dsvpmvnq'
   - &macbookpro   'age1rj8zgx8zzdjqkv08z9zarqhv3gre7juqvyjkjyak37t22w6eppvql9jvt9'
-  - &msi          'age1rmkcmpa6qgk3rlv0vmqhg9crqnqfg482veucjc6evd822nfpeyqsc3agyf'
+  - &msi          'age176409zgn2fmd2ff0ph64n7hsrew7gz8pzet6ctt5lxksrf0h83kq9yes0f'
 creation_rules:
   - path_regex: 'secrets/[^/]+\.yaml$'
     key_groups:
