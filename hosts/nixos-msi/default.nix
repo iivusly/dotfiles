@@ -26,6 +26,7 @@
       ];
 
       user = globals.user;
+      boot.loader.systemd-boot.enable = true;
 
       home-manager = {
         extraSpecialArgs = specialArgs;
