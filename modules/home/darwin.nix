@@ -21,7 +21,7 @@
      tile-type = "file-tile";
    } else item;
 in {
-  targets.darwin.defaults = lib.optional pkgs.stdenv.hostPlatform.isDarwin {
+  targets.darwin.defaults = lib.optionals pkgs.stdenv.hostPlatform.isDarwin {
     "com.apple.dock" = {
       persistent-apps = map toTile [
         { app = "/System/Applications/Apps.app"; }
