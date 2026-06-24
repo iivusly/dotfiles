@@ -108,8 +108,10 @@
       systemd.enable = true;
       wrapperFeatures.gtk = true;
 
-      config = {
-        modifier = "Mod4";
+      config = let 
+        mod = "Mod4";
+      in {
+        modifier = mod;
         terminal = "${pkgs.kitty}/bin/kitty";
         input = {
           "type:*" = {
@@ -121,57 +123,78 @@
             "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_SINK@ .05+";
             "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_SINK@ .05-";
             "XF86Search" = ''exec grim -g "$(slurp -c '#ff3f3faf' -w 2 -d -o)" -t png  - | wl-copy'';
-            "Mod4+d" = "exec ${config.programs.rofi.package}/bin/rofi -show drun";
+            "${mod}+grave" = "workspace 0";
+            "${mod}+shift+grave" = "move container to workspace 0";
+            "${mod}+d" = "exec ${config.programs.rofi.package}/bin/rofi -show drun";
           };
         output = {
           "HDMI-A-1" = {
             pos = "3024 0";
           };
         };
-        bars = [
+        workspaceOutputAssign = [
           {
-            mode = "dock";
-            hiddenState = "hide";
-            position = "top";
-            workspaceButtons = true;
-            workspaceNumbers = true;
-            statusCommand = "${pkgs.i3status}/bin/i3status";
-            fonts = {
-              names = [ "monospace" ];
-              size = 8.0;
-            };
-            trayOutput = "*";
-            colors = {
-              background = "#000000";
-              statusline = "#ffffff";
-              separator = "#666666";
-              focusedWorkspace = {
-                border = "#4c7899";
-                background = "#285577";
-                text = "#ffffff";
-              };
-              activeWorkspace = {
-                border = "#333333";
-                background = "#5f676a";
-                text = "#ffffff";
-              };
-              inactiveWorkspace = {
-                border = "#333333";
-                background = "#222222";
-                text = "#888888";
-              };
-              urgentWorkspace = {
-                border = "#2f343a";
-                background = "#900000";
-                text = "#ffffff";
-              };
-              bindingMode = {
-                border = "#2f343a";
-                background = "#900000";
-                text = "#ffffff";
-              };
-            };
+            workspace = "0";
+            output = "DP-3";
           }
+          {
+            workspace = "1";
+            output = "DP-3";
+          }
+          {
+            workspace = "2";
+            output = "DP-3";
+          }
+          {
+            workspace = "3";
+            output = "DP-3";
+          }
+          {
+            workspace = "4";
+            output = "DP-3";
+          }
+          {
+            workspace = "5";
+            output = "DP-3";
+          }
+          {
+            workspace = "6";
+            output = "eDP-1";
+          }
+          {
+            workspace = "7";
+            output = "eDP-1";
+          }
+          {
+            workspace = "8";
+            output = "eDP-1";
+          }
+          {
+            workspace = "9";
+            output = "eDP-1";
+          }
+          {
+            workspace = "10";
+            output = "eDP-1";
+          }
+        ];
+        bars = [
+          (
+            {
+              mode = "dock";
+              hiddenState = "hide";
+              position = "top";
+              workspaceButtons = true;
+              workspaceNumbers = true;
+              statusCommand = "${pkgs.i3status}/bin/i3status";
+              fonts = {
+                names = [ "monospace" ];
+                size = 8.0;
+              };
+              trayOutput = "*";
+            }
+            // config.stylix.targets.sway.exportedBarConfig
+          )
         ];
       };
     };
