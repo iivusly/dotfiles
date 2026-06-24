@@ -2,9 +2,9 @@
 {
   services.greetd = {
     enable = true;
-    settings = rec {
+    settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd ${config.wayland.windowManager.sway.package}/bin/sway";
         user = "iivusly";
       };
     };
