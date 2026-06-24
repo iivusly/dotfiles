@@ -156,7 +156,7 @@
             git
             sops
             nix-output-monitor
-            deploy-rs.packages.aarch64-darwin.deploy-rs
+            deploy-rs.packages.${system}.deploy-rs
             openssh
           ];
           shellHook = ''
