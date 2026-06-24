@@ -18,7 +18,7 @@
     ./hardware-configuration.nix
     ../../modules/shared
     ../../modules/linux
-     inputs.home-manager.darwinModules.home-manager
+     inputs.home-manager.nixosModules.home-manager
     {
       nixpkgs.overlays = [
         outputs.overlays.unstable-packages
