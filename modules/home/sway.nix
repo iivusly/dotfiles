@@ -121,6 +121,7 @@
             "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_SINK@ .05+";
             "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_SINK@ .05-";
             "XF86Search" = ''exec grim -g "$(slurp -c '#ff3f3faf' -w 2 -d -o)" -t png  - | wl-copy'';
+            "Mod4+d" = "exec ${config.programs.rofi.package}/bin/rofi -show drun";
           };
         output = {
           "HDMI-A-1" = {

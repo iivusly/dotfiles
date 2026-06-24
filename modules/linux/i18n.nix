@@ -1,0 +1,9 @@
+{
+  i18n = {
+    supportedLocales = [
+      "en_US.UTF-8/UTF-8"
+      "en_CA.UTF-8/UTF-8"
+      "fr_CA.UTF-8/UTF-8"
+    ];
+  };
+}
