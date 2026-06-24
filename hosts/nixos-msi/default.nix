@@ -47,6 +47,7 @@
           inputs.nix-index-database.homeModules.nix-index
           inputs.nixvim.homeModules.nixvim
           inputs.stylix.homeModules.stylix
+          inputs.nix-flatpak.homeManagerModules.nix-flatpak
           inputs.sops-nix.homeManagerModules.sops
           ../../modules/home
         ];

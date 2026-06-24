@@ -33,6 +33,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
     };
+    nix-flatpak = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:gmodena/nix-flatpak/?ref=latest";
+    };
     nix-index-database = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:Mic92/nix-index-database";
